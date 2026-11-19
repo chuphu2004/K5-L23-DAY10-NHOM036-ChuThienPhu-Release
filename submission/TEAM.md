@@ -1,7 +1,7 @@
 # Nhóm 036
 
 - Seed luyện tập: **36007** (release_id v1: `lab250_20c49a5c6d97`)
-- Repo: https://github.com/chuphu2004/K5-L23-DAY10-NHOM036-Release
+- Repo: <https://github.com/chuphu2004/K5-L23-DAY10-NHOM036-Release>
 
 ## Tạo lô trên máy mình (mỗi người chạy một lần, từ thư mục gốc repo)
 
@@ -18,7 +18,7 @@ Cùng seed thì ra cùng lô, nên `release_id` phải là `lab250_20c49a5c6d97`
 |---|---|---|---|
 | Chu Thiên Phú | 2A202603114 | chuphu2004 | <<>> |
 | Lưu Nhật Nam | 2A202603243 | <<>> | <<>> |
-| Hoàng Thu Hương | 2A202603143 | <<>> | <<>> |
+| Hoàng Thu Hương | 2A202603143 | borisbrjch | P3, P4 |
 | Nguyễn Việt Anh | 2A202603095 | <<>> | <<>> |
 
 Phần chính: validator luật / đối chiếu / review / bàn giao / truy vết / bảo mật. Ai cũng phải xem ảnh ở Pha 2.
