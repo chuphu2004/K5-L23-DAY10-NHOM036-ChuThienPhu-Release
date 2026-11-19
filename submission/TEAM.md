@@ -16,7 +16,7 @@ Cùng seed thì ra cùng lô, nên `release_id` phải là `lab250_20c49a5c6d97`
 
 | Họ và tên | MSHV | Tài khoản GitHub | Phần chính |
 |---|---|---|---|
-| Chu Thiện Phú | 2A202603114 | chuphu2004 | <<>> |
+| Chu Thiên Phú | 2A202603114 | chuphu2004 | <<>> |
 | Lưu Nhật Nam | 2A202603243 | <<>> | <<>> |
 | Hoàng Thu Hương | 2A202603143 | <<>> | <<>> |
 | Nguyễn Việt Anh | 2A202603095 | <<>> | <<>> |
