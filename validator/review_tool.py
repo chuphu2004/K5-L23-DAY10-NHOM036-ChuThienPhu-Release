@@ -8,6 +8,10 @@ Mỗi ứng viên vẽ 3 ô cùng một vùng cắt (phóng to):
   2. box detection (đỏ = box của ứng viên, vàng = box khác) + tên lớp
   3. viền segment panoptic (mỗi segment một màu) + tên lớp
 Ghi ra <out>/index.html (mở bằng trình duyệt) và <out>/review_log_todo.csv để điền verdict/note.
+
+Trang điền review cho từng người (chọn dòng theo thứ tự trong review_log_todo.csv):
+  python validator/review_tool.py runs/r36007/delivery runs/r36007/candidates.json --out runs/r36007/review --reviewer "Lưu Nhật Nam" --rows 9-16
+-> <out>/review_<tên>.html: chọn verdict/type, ghi note, bấm tải về review_<tên>.csv (image,type,verdict,note).
 """
 
 from __future__ import annotations
@@ -16,6 +20,8 @@ import argparse
 import csv
 import html
 import json
+import re
+import unicodedata
 from pathlib import Path
 
 import numpy as np
@@ -120,6 +126,8 @@ def main() -> int:
     ap.add_argument("delivery", type=Path)
     ap.add_argument("candidates", type=Path)
     ap.add_argument("--out", type=Path, required=True)
+    ap.add_argument("--reviewer", help="tên người xem: tạo thêm trang điền review riêng")
+    ap.add_argument("--rows", default="1-999", help="dòng của người đó trong review_log_todo.csv, vd 9-16")
     args = ap.parse_args()
     d = args.delivery
     classes = {int(l.split()[0]): l.split(maxsplit=1)[1] for l in (d / "classes.txt").read_text().splitlines() if l.strip()}
@@ -156,7 +164,28 @@ def main() -> int:
         w.writeheader()
         w.writerows(rows)
     print(f"{len(by_image)} ảnh, {len(cands)} ứng viên -> {args.out}/index.html, review_log_todo.csv")
+    if args.reviewer:
+        a, _, b = args.rows.partition("-")
+        mine = rows[int(a) - 1:int(b or a)]
+        page = reviewer_page(args.out, args.reviewer, args.rows, mine, by_image, args.delivery.parent.name)
+        print(f"{len(mine)} ảnh cho {args.reviewer} -> {page}")
     return 0
+
+
+def reviewer_page(out: Path, name: str, rows_label: str, mine: list[dict], by_image: dict, run: str) -> Path:
+    """Trang điền review cho một người; bản nháp lưu trong trình duyệt, kết quả tải về dạng CSV."""
+    slug = re.sub(r"[^a-z0-9]+", "_", unicodedata.normalize("NFKD", name.replace("đ", "d").replace("Đ", "D"))
+                  .encode("ascii", "ignore").decode().lower()).strip("_")
+    data = [{"image": r["image"], "cands": [{"png": f"{r['image']}_{k}.png", "type": c["type"], "hint": c.get("hint", "")}
+                                             for k, c in enumerate(by_image[r["image"]])]} for r in mine]
+    tpl = (Path(__file__).with_name("review_form.html")).read_text(encoding="utf-8")
+    fill = {"__DATA__": json.dumps(data, ensure_ascii=False), "__NAME__": html.escape(name), "__ROWS__": rows_label,
+            "__RUN__": run, "__KEY__": f"review_{slug}_{run.lstrip('r')}", "__FILE__": f"review_{slug}.csv"}
+    for k, v in fill.items():
+        tpl = tpl.replace(k, v)
+    page = out / f"review_{slug}.html"
+    page.write_text(tpl, encoding="utf-8")
+    return page
 
 
 if __name__ == "__main__":

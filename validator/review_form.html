@@ -1,0 +1,83 @@
+<!doctype html><meta charset="utf-8"><title>Review __NAME__</title>
+<style>
+body{font-family:system-ui,sans-serif;max-width:1100px;margin:0 auto;padding:16px;background:#f6f7f9;color:#18212e}
+.card{background:#fff;border:1px solid #dfe3ea;border-radius:10px;padding:16px;margin:18px 0}
+.card.done{border-left:6px solid #1f8a4c}
+h2{margin:0 0 8px;font-size:1.15rem} .hint{color:#5b6676;font-size:.92rem;margin:10px 0 4px}
+img{max-width:100%;border:1px solid #ccc;border-radius:4px}
+.form{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;align-items:start;margin-top:12px;background:#f6f7f9;padding:12px;border-radius:8px}
+textarea{width:100%;min-height:58px;font:inherit;box-sizing:border-box} select{font:inherit}
+.err{color:#c8372d;font-size:.85rem;grid-column:2}
+.bar{position:sticky;bottom:0;background:#fff;border-top:2px solid #333;padding:12px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+button{font:inherit;padding:8px 14px;border-radius:6px;border:1px solid #2f5bd3;background:#2f5bd3;color:#fff;cursor:pointer}
+button.alt{background:#fff;color:#2f5bd3} #out{width:100%;min-height:120px;font-family:monospace;font-size:.85rem}
+.legend{background:#e7edfc;padding:10px 14px;border-radius:8px;font-size:.92rem}
+</style>
+<h1>Review của __NAME__: dòng __ROWS__ (__RUN__)</h1>
+<div class="legend">Mỗi ảnh có nhiều nhất <b>một</b> lỗi. Nhìn ô <b>ảnh gốc</b> trước, rồi so với ô detection (box, đỏ = box bị nghi) và panoptic (vùng tô màu).<br>
+<b>confirmed</b> = lỗi thật, chọn đúng một loại. <b>rejected</b> = lệch tự nhiên (vật bị che, crowd, box COCO hơi rộng): vẫn chọn loại ứng viên và ghi lý do.<br>
+Đổi lớp: detection sai → <code>class_swap</code>; panoptic sai → <code>category_swap</code>. Ghi chú ≥ 20 ký tự, nói <b>thấy gì</b> trong ảnh, không chép giống nhau.<br>
+Bản nháp tự lưu trong trình duyệt. Xong thì bấm <b>Tải __FILE__</b>.</div>
+<div id="list"></div>
+<div class="bar"><button id="dl">Tải __FILE__</button><button class="alt" id="cp">Copy CSV</button><span id="st"></span>
+<textarea id="out" readonly></textarea></div>
+<script>
+const DATA = __DATA__;
+const TYPES = ["class_swap","category_swap","bbox_drift","missing_box","instance_merge"];
+const KEY = "__KEY__";
+let saved = {}; try { saved = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch(e) {}
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const list = document.getElementById("list");
+DATA.forEach((d, i) => {
+  const s = saved[d.image] || {};
+  const guess = d.cands[0].type.includes("|") ? "" : d.cands[0].type;
+  const el = document.createElement("div"); el.className = "card"; el.id = "c" + i;
+  el.innerHTML = `<h2>${i+1}/${DATA.length} · ${d.image}</h2>` +
+    d.cands.map(c => `<p class="hint"><b>${esc(c.type)}</b>: ${esc(c.hint)}</p><img src="${c.png}" alt="ứng viên ${esc(c.type)} ảnh ${d.image}">`).join("") +
+    `<div class="form">
+      <label>Kết luận</label><div>
+        <label><input type="radio" name="v${i}" value="confirmed"> confirmed (lỗi thật)</label> &nbsp;
+        <label><input type="radio" name="v${i}" value="rejected"> rejected (lệch tự nhiên)</label></div>
+      <label for="t${i}">Loại</label><select id="t${i}"><option value="">-- chọn --</option>${TYPES.map(t=>`<option>${t}</option>`).join("")}</select>
+      <label for="n${i}">Ghi chú: thấy gì</label><textarea id="n${i}" placeholder="vd: vùng giữa là thân gấu bông nâu nhạt, panoptic ghi bed; detection đúng"></textarea>
+      <div class="err" id="e${i}"></div></div>`;
+  list.appendChild(el);
+  if (s.verdict) el.querySelector(`input[value="${s.verdict}"]`).checked = true;
+  el.querySelector("select").value = (s.type !== undefined ? s.type : guess);
+  el.querySelector("textarea").value = s.note || "";
+  el.addEventListener("input", update); el.addEventListener("change", update);
+});
+function rows() {
+  return DATA.map((d, i) => ({image: d.image,
+    verdict: (document.querySelector(`input[name="v${i}"]:checked`) || {}).value || "",
+    type: document.getElementById("t"+i).value, note: document.getElementById("n"+i).value.trim()}));
+}
+const q = s => '"' + s.replace(/"/g, '""') + '"';
+function update() {
+  const rs = rows(); const store = {}; let ok = 0;
+  const notes = rs.map(r => r.note.toLowerCase());
+  rs.forEach((r, i) => {
+    store[r.image] = r; const errs = [];
+    if (!r.verdict) errs.push("chưa chọn kết luận");
+    if (!r.type) errs.push("chưa chọn loại");
+    if (r.note.length < 20) errs.push(`ghi chú mới ${r.note.length}/20 ký tự`);
+    if (r.note && notes.indexOf(r.note.toLowerCase()) !== i) errs.push("ghi chú trùng với ảnh khác");
+    document.getElementById("e"+i).textContent = errs.join(" · ");
+    document.getElementById("c"+i).classList.toggle("done", !errs.length); if (!errs.length) ok++;
+  });
+  try { localStorage.setItem(KEY, JSON.stringify(store)); } catch(e) {}
+  document.getElementById("out").value = "image,type,verdict,note\n" + rs.map(r => [r.image, r.type, r.verdict, q(r.note + " (__NAME__ xem)")].join(",")).join("\n") + "\n";
+  document.getElementById("st").textContent = `${ok}/${DATA.length} ảnh đã điền đủ`;
+}
+document.getElementById("dl").onclick = () => {
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([document.getElementById("out").value], {type: "text/csv"}));
+  a.download = "__FILE__"; a.click();
+};
+document.getElementById("cp").onclick = async () => {
+  const t = document.getElementById("out");
+  try { await navigator.clipboard.writeText(t.value); document.getElementById("st").textContent = "Đã copy"; }
+  catch(e) { t.select(); document.execCommand("copy"); }
+};
+update();
+</script>
