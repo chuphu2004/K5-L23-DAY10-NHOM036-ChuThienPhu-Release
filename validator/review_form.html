@@ -32,8 +32,8 @@ DATA.forEach((d, i) => {
   const s = saved[d.image] || {};
   const guess = d.cands[0].type.includes("|") ? "" : d.cands[0].type;
   const el = document.createElement("div"); el.className = "card"; el.id = "c" + i;
-  el.innerHTML = `<h2>${i+1}/${DATA.length} · ${d.image}</h2>` +
-    d.cands.map(c => `<p class="hint"><b>${esc(c.type)}</b>: ${esc(c.hint)}</p><img src="${c.png}" alt="ứng viên ${esc(c.type)} ảnh ${d.image}">`).join("") +
+  el.innerHTML = `<h2>${i+1}/${DATA.length} · ${esc(d.image)}</h2>` +
+    d.cands.map(c => `<p class="hint"><b>${esc(c.type)}</b>: ${esc(c.hint)}</p><img src="${esc(c.png)}" alt="ứng viên ${esc(c.type)} ảnh ${esc(d.image)}">`).join("") +
     `<div class="form">
       <label>Kết luận</label><div>
         <label><input type="radio" name="v${i}" value="confirmed"> confirmed (lỗi thật)</label> &nbsp;

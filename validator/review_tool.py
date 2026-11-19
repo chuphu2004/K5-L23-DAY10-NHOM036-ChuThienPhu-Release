@@ -179,8 +179,10 @@ def reviewer_page(out: Path, name: str, rows_label: str, mine: list[dict], by_im
     data = [{"image": r["image"], "cands": [{"png": f"{r['image']}_{k}.png", "type": c["type"], "hint": c.get("hint", "")}
                                              for k, c in enumerate(by_image[r["image"]])]} for r in mine]
     tpl = (Path(__file__).with_name("review_form.html")).read_text(encoding="utf-8")
-    fill = {"__DATA__": json.dumps(data, ensure_ascii=False), "__NAME__": html.escape(name), "__ROWS__": rows_label,
-            "__RUN__": run, "__KEY__": f"review_{slug}_{run.lstrip('r')}", "__FILE__": f"review_{slug}.csv"}
+    # dữ liệu nhúng vào <script>: chặn "</script>" và thẻ HTML lọt từ tên file của lô
+    safe = json.dumps(data, ensure_ascii=False).replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
+    fill = {"__DATA__": safe, "__NAME__": html.escape(name), "__ROWS__": html.escape(rows_label),
+            "__RUN__": html.escape(run), "__KEY__": f"review_{slug}_{run.lstrip('r')}", "__FILE__": f"review_{slug}.csv"}
     for k, v in fill.items():
         tpl = tpl.replace(k, v)
     page = out / f"review_{slug}.html"
