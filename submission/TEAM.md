@@ -1,7 +1,7 @@
 # Nhóm 036
 
 - Seed luyện tập: **36007** (release_id v1: `lab250_20c49a5c6d97`)
-- Repo: <https://github.com/chuphu2004/K5-L23-DAY10-NHOM036-Release>
+- Repo: <https://github.com/chuphu2004/K5-L23-DAY10-NHOM036-ChuThienPhu-Release>
 
 ## Tạo lô trên máy mình (mỗi người chạy một lần, từ thư mục gốc repo)
 
