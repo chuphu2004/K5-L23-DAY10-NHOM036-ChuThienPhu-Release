@@ -1,0 +1,136 @@
+{
+ "errors": [
+  {
+   "type": "bbox_drift",
+   "target": "img_0002"
+  },
+  {
+   "type": "bbox_drift",
+   "target": "img_0158"
+  },
+  {
+   "type": "bbox_drift",
+   "target": "img_0202"
+  },
+  {
+   "type": "bbox_drift",
+   "target": "img_0237"
+  },
+  {
+   "type": "bbox_out_of_bounds",
+   "target": "img_0189"
+  },
+  {
+   "type": "bbox_out_of_bounds",
+   "target": "img_0192"
+  },
+  {
+   "type": "category_swap",
+   "target": "img_0013"
+  },
+  {
+   "type": "category_swap",
+   "target": "img_0017"
+  },
+  {
+   "type": "category_swap",
+   "target": "img_0041"
+  },
+  {
+   "type": "category_swap",
+   "target": "img_0073"
+  },
+  {
+   "type": "category_swap",
+   "target": "img_0170"
+  },
+  {
+   "type": "category_swap",
+   "target": "img_0214"
+  },
+  {
+   "type": "class_swap",
+   "target": "img_0002"
+  },
+  {
+   "type": "class_swap",
+   "target": "img_0027"
+  },
+  {
+   "type": "class_swap",
+   "target": "img_0037"
+  },
+  {
+   "type": "class_swap",
+   "target": "img_0041"
+  },
+  {
+   "type": "class_swap",
+   "target": "img_0055"
+  },
+  {
+   "type": "class_swap",
+   "target": "img_0080"
+  },
+  {
+   "type": "class_swap",
+   "target": "img_0108"
+  },
+  {
+   "type": "class_swap",
+   "target": "img_0175"
+  },
+  {
+   "type": "class_swap",
+   "target": "img_0249"
+  },
+  {
+   "type": "guideline_mismatch",
+   "target": "img_0035"
+  },
+  {
+   "type": "guideline_mismatch",
+   "target": "img_0076"
+  },
+  {
+   "type": "instance_merge",
+   "target": "img_0247"
+  },
+  {
+   "type": "invalid_class",
+   "target": "img_0197"
+  },
+  {
+   "type": "missing_box",
+   "target": "img_0070"
+  },
+  {
+   "type": "missing_image",
+   "target": "img_0024"
+  },
+  {
+   "type": "missing_image",
+   "target": "img_0220"
+  },
+  {
+   "type": "scene_leak",
+   "target": "scene_796"
+  },
+  {
+   "type": "thing_overlap",
+   "target": "img_0119"
+  },
+  {
+   "type": "thing_overlap",
+   "target": "img_0178"
+  },
+  {
+   "type": "wrong_hash",
+   "target": "img_0008"
+  },
+  {
+   "type": "wrong_hash",
+   "target": "img_0218"
+  }
+ ]
+}

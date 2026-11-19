@@ -1,0 +1,34 @@
+image,candidate,suggested_type,suggested_verdict,draft_note,check_needed,source
+img_0112,1,class_swap,rejected,"Box chair bao chiếc ghế sau người phụ nữ, máy ghép nhầm sang segment person.",,AI draft - not human confirmed
+img_0113,1,bbox_drift,rejected,Box boat đang bao thuyền phía sau; segment được ghép còn có phần của thuyền phía trước.,"Hai thuyền chồng nhau, cần kiểm tra lại đường viền trước khi chốt.",AI draft - not human confirmed
+img_0113,2,instance_merge,rejected,"Hai chiếc thuyền nằm chồng nhau nhưng có đường viền segment riêng, không thấy gộp thành một thuyền.",Cần nhìn lại ranh giới hai thân thuyền.,AI draft - not human confirmed
+img_0113,3,missing_box,rejected,"Thuyền nhỏ phía sau bên phải đã có box boat, không thiếu box tương ứng.",,AI draft - not human confirmed
+img_0125,1,instance_merge,rejected,"Các cuốn sách có segment riêng, box chồng nhau nên máy ghép nhầm.","Ảnh nhỏ, đề xuất dựa trên phần nhìn thấy.",AI draft - not human confirmed
+img_0126,1,instance_merge,rejected,"Ghế bị người che và các box chồng nhau, chưa thấy 2 ghế bị gộp chung.","Vùng ghế mờ, cần bạn xác nhận.",AI draft - not human confirmed
+img_0158,1,bbox_drift,confirmed,"Box bear lệch sang phải và xuống dưới, bỏ mất phần bên trái của con gấu lớn.",,AI draft - not human confirmed
+img_0159,1,class_swap,rejected,"Box chair bao ghế người đàn ông đang ngồi, máy ghép nhầm sang segment person.",,AI draft - not human confirmed
+img_0162,1,missing_box,rejected,"Các quả chuối đã có box banana tương ứng, máy ghép không khớp do chuối nằm sát nhau.",,AI draft - not human confirmed
+img_0162,2,instance_merge,rejected,"Các quả chuối có vùng segment riêng, hai box chồng nhau không có nghĩa là bị gộp.",,AI draft - not human confirmed
+img_0170,1,category_swap,confirmed,"Vật thực tế là ngựa vằn nhưng panoptic lại ghi tennis racket, detection ghi zebra đúng.",,AI draft - not human confirmed
+img_0174,1,class_swap,rejected,"Vật là ly uống nước, có cả box cup và wine glass cùng bao ly này.","Khác cách phân loại cup và wine glass, cần kiểm tra guideline.",AI draft - not human confirmed
+img_0175,1,class_swap,confirmed,"Xe phía sau là xe buýt nhưng detection ghi car, panoptic ghi bus đúng.",,AI draft - not human confirmed
+img_0175,2,instance_merge,rejected,"Xe buýt và ô tô trắng có segment riêng, không bị gộp thành một xe.",,AI draft - not human confirmed
+img_0193,1,category_swap,rejected,"Ghế bọc nệm bên phải có tay vịn, chair và couch đang chỉ cùng chiếc ghế.","Ghế đơn và sofa dễ nhầm, đề xuất bác bỏ do chưa rõ lỗi.",AI draft - not human confirmed
+img_0193,2,class_swap,rejected,"Vật đỏ trên bàn có cả box bowl và cup, chưa thấy lỗi đổi lớp rõ ràng.","Vật nhỏ, chưa phân biệt chắc cốc hay bát trang trí.",AI draft - not human confirmed
+img_0202,1,bbox_drift,confirmed,"Box knife lệch xuống dưới và sang phải, không bao đúng cán dao đang được ghép.",,AI draft - not human confirmed
+img_0202,2,instance_merge,rejected,"Các cán dao có segment riêng, box bị lệch làm máy nghi một segment phủ hai dao.",,AI draft - not human confirmed
+img_0204,1,category_swap,rejected,"Vật trắng có nắp đen được gán cả bottle và cup, chưa thấy đổi lớp rõ ràng.","Bình và cốc có nắp dễ nhầm, cần bạn xác nhận.",AI draft - not human confirmed
+img_0204,2,class_swap,rejected,"Vật xanh có cả box bottle và cup, 2 box chồng nhau nên máy ghép khác nhãn.","Ảnh mờ, cần bạn xác nhận loại vật.",AI draft - not human confirmed
+img_0214,1,category_swap,confirmed,"Vật thực tế là con mèo nhưng panoptic ghi dog, detection ghi cat đúng.",,AI draft - not human confirmed
+img_0223,1,class_swap,rejected,"Có cả box chair và couch quanh ghế bọc nệm, chưa thấy bằng chứng box couch là lỗi đổi lớp.",Ghế đơn và sofa dễ nhầm; kiểm tra lại guideline.,AI draft - not human confirmed
+img_0226,1,class_swap,rejected,"Box couch bao ghế có con chó nằm lên trên, máy ghép nhầm sang segment dog.",,AI draft - not human confirmed
+img_0227,1,class_swap,rejected,"Box dining table bao vùng bàn phía dưới đĩa pizza, máy ghép nhầm sang segment pizza.",,AI draft - not human confirmed
+img_0227,2,missing_box,rejected,"Bàn ăn đã có box dining table bao vùng ảnh, không thiếu box của bàn.",,AI draft - not human confirmed
+img_0237,1,bbox_drift,confirmed,"Box orange lệch sang phải và xuống dưới, bỏ phần mép trên bên trái của miếng cam.",,AI draft - not human confirmed
+img_0242,1,bbox_drift,rejected,"Box dài bao người áo hồng, máy ghép nhầm sang segment người đứng bên phải.",,AI draft - not human confirmed
+img_0242,2,instance_merge,rejected,"Người áo hồng và người áo đen có segment riêng, máy ghép nhầm 2 box.",,AI draft - not human confirmed
+img_0242,3,missing_box,rejected,"Những người phía trước đã có box person, phần bị che làm máy không ghép được segment.",Kiểm tra lại đúng segment mục tiêu trước khi chốt.,AI draft - not human confirmed
+img_0247,1,bbox_drift,rejected,"Box tv bao màn hình bên trái, segment được ghép còn trải sang màn hình bên phải nên báo lệch.",,AI draft - not human confirmed
+img_0247,2,bbox_drift,rejected,"Box tv bao màn hình bên phải, không phải box lệch; segment đang gồm vùng hai màn hình.",,AI draft - not human confirmed
+img_0247,3,instance_merge,confirmed,Hai màn hình nằm hai bên đầu gấu nhưng panoptic gộp chung một segment tv.,Cần kiểm tra lại hai vùng có cùng segment id.,AI draft - not human confirmed
+img_0249,1,class_swap,confirmed,"Vật bên trái là ghế đơn nhưng detection ghi bench, panoptic ghi chair đúng.",,AI draft - not human confirmed

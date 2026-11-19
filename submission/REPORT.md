@@ -1,25 +1,32 @@
-# Báo cáo nhóm <<XX>>
+# Báo cáo nhóm 036
 
 ## 1. Số liệu luyện tập
-- F1 theo seed (rule / cross_check / overall): <<seed: ... / ... / ...>>
-- Số ứng viên trên lô sạch (`--no-faults`): <<...>>; hàng đợi trên seed luyện tập: <<... ảnh>>
-- Ngưỡng đã chọn và cách chọn (không dùng `_private`): <<...>>
+
+- F1 theo seed (rule / cross_check / overall): seed 36007 đo trên lô kiểm tra Linux đúng ID nhóm: ≈ 1,0 / 0,4 / 0,7. Seed 36011: rule ≈ 1,0 theo nhật ký nhóm; chưa lưu cross_check và overall.
+- Lô sạch: 0 lỗi luật, 19 ứng viên trên 8 ảnh. Seed 36007: 55 ứng viên trên 32 ảnh, review 20 confirmed và 12 rejected. Seed 36011: 55 ứng viên trên 30 ảnh.
+- Ngưỡng đối chiếu: ghép cùng lớp ≥ 0,1; khác lớp ≥ 0,2 và mức khớp cùng lớp < 50% mức khớp khác lớp. Box lệch: segment vượt ≥ 8% cạnh box và < 95% pixel nằm trong box. Thiếu box: segment ≥ 0,5% diện tích ảnh. Gộp vật: segment phủ ≥ 15% mỗi box và IoU hai box < 0,5.
+- Cách chọn: thử trên lô sạch, sửa cách ghép để giảm ứng viên từ 70 xuống 19 theo nhật ký nhóm; không đọc đáp án riêng.
 
 ## 2. Vì sao báo hết ứng viên làm F1 giảm?
-<<Trả lời bằng số của nhóm.>>
+
+Lô sạch vẫn có 19 ứng viên dù không có lỗi gài. Seed 36007 có 12/32 dòng review bị bác bỏ. Báo hết ứng viên sẽ tăng báo thừa, giảm precision và F1.
 
 ## 3. Quyết định và lineage
-Seed 36007 có 34 mục lỗi trên 250 ảnh (13,6%), vượt ngưỡng 2%. Nhóm đã ghi HOLD cho v1 `lab250_20c49a5c6d97`. Run `R-021` đã dùng v1 để train. Thay dataset sau đó không thay đổi trọng số đã học, nên đội AI cần đánh giá lại run và cân nhắc train lại bằng v2.
 
-Lô detection `lab250_20c49a5c6d97_v2` có 228 ảnh và 1.517 box. Nhóm đã tách 22 ảnh để rework và giữ 8 ảnh chỉ lỗi panoptic, có ghi mã trong README bàn giao. Cụm “5 scene_leak corrected” ở trường detail của lineage cần đọc theo dữ liệu thực tế: chỉ có **một cảnh rò split**, gồm 5 ảnh ở v1. Trong v2, 1 ảnh của cảnh đã vào rework, 1 ảnh đổi split và cả 4 ảnh giữ lại thuộc train.
+V1 có 34/250 ảnh lỗi = 13,6% > 2% nên Hold. Lineage ghi HOLD cho lab250_20c49a5c6d97 và release v2 có parent là v1. R-021 đã train trên v1 nên cần đánh giá lại hoặc train lại; đổi dataset không sửa trọng số đã học.
+
+V2 giữ 228 ảnh, 1.517 box; tách 22 ảnh rework và giữ 8 ảnh chỉ lỗi panoptic. Cảnh scene_378 giữ lại 4 ảnh cùng split train, trong đó 1 ảnh được đổi từ val sang train.
 
 ## 4. Hash chứng minh gì, không chứng minh gì?
-Manifest v2 ghi SHA-256 cho 228 JPG và 228 file nhãn YOLO. Đối chiếu với manifest cho biết các file có giữ nguyên nội dung byte so với thời điểm lập bảng hay không. Một box gán sai vẫn có hash hợp lệ, nên việc đánh giá nhãn cần dựa vào xem ảnh. Nhóm đã kiểm hai JPG sai hash ở v1, giữ ảnh và nhãn gốc, rồi ghi hash thực vào manifest v2.
+
+SHA-256 chứng minh nội dung file khớp bản đã lập manifest, không chứng minh nhãn đúng. Manifest v2 có 456 file: 228 ảnh và 228 nhãn. Hai ảnh sai hash được nhóm kiểm tra, giữ nguyên ảnh và cập nhật hash ở v2; v1 giữ nguyên.
 
 ## 5. Truy vết
-Ticket nêu hai cảnh `scene_324` và `scene_690`. Từ v1.3, ly rượu bị che trên 50% hoặc bị cắt ở mép ảnh vẫn phải có box. Để tìm ảnh cần mở lại, nhóm dùng nhãn detection của lô v1 mà R-021 đã train. Nhóm nối mỗi ảnh với job qua metadata, lấy phiên bản guideline từ jobs.csv vì phiên bản ghi trên từng ảnh có thể sai. Trong các job dùng v1.2, nhóm chọn ảnh có ít nhất một box lớp 40 (`wine glass`).
 
-Ba ảnh trong hai cảnh được báo thuộc tier_a. Bốn ảnh còn lại thuộc tier_b, nằm ở scene_219 và scene_378. Hai job liên quan là J02 (A02, Q02) và J04 (A04, Q01). Đây là bảy ảnh cần mở lại để kiểm tra ticket. Công cụ tự đo trả về F1 làm tròn 1,0 cho từng danh sách tier_a, tier_b và notify.
+Chọn ảnh thuộc job guideline v1.2 và có box wine glass (lớp 40). Lấy guideline theo jobs.csv vì guideline ghi trên ảnh có thể sai.
+
+Tier_a có 3 ảnh trong scene_324 và scene_690; tier_b có 4 ảnh khác trong scene_219 và scene_378. Notify gồm A02, Q02, A04, Q01. Theo kết quả nhóm đã ghi, F1 tier_a, tier_b và notify đều làm tròn 1,0.
 
 ## 6. Bug hoặc điểm chưa rõ trong lab (nếu có)
-Khi dùng script gốc trên cùng thư mục v2, bản ZIP tạo bằng Windows/Python 3.13 có SHA-256 khác bản tạo bằng Linux/Python 3.10. Gói nộp được đóng và kiểm bằng Linux/Python 3.10. H1–H15 đều PASS trong môi trường này. Trên Windows có thể dùng `Get-FileHash` để đối chiếu trực tiếp bản ZIP đã giao với file `.sha256`.
+
+Nhóm ghi nhận cùng seed có release ID khác giữa các môi trường; ZIP đóng trên Windows/Python 3.13 và Linux/Python 3.10 cũng có hash khác. Bài nộp dùng bản của nhóm lab250_20c49a5c6d97, đóng và kiểm trên Linux/Python 3.10; nhóm đã ghi H1–H15 PASS trong môi trường này. Kiểm tra lại ngày 20/11/2026 trên WSL Ubuntu/Python 3.12.3: H1–H17 đều PASS.

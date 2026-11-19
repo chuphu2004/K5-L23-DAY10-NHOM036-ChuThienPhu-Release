@@ -1,0 +1,60 @@
+image,type,verdict,note
+img_0001,class_swap,rejected,Detection ghi handbag đúng là túi xách; máy ghép nhầm box túi với segment người. (NguyenVietAnh xem)
+img_0001,missing_box,rejected,"Túi xách đã có box detection, không thiếu box. (NguyenVietAnh xem)"
+img_0002,bbox_drift,confirmed,Box chair ở góc dưới bên phải đang bị kéo dồn về góc chưa khớp với vật (NguyenVietAnh xem)
+img_0002,bbox_drift,confirmed,Box đang lệch sang góc dưới bêntrái và không bao được hết couch ở góc phải (NguyenVietAnh xem)
+img_0002,class_swap,confirmed,box phải là couch không phải chair (NguyenVietAnh xem)
+img_0002,bbox_drift,rejected,box đã bao và khít với couch (NguyenVietAnh xem)
+img_0002,class_swap,confirmed,Detection ghi sai tên là chair phải là cound (NguyenVietAnh xem)
+img_0002,category_swap,rejected,Panoptic ghi sai tên phải là couch không phải chair (NguyenVietAnh xem)
+img_0002,instance_merge,rejected,2 vùng segment không bị chống lên nhau dang tách ra riêng biệt mỗi vùng (NguyenVietAnh xem)
+img_0002,missing_box,rejected,Thừa 1 box ở góc dưới bên phải (NguyenVietAnh xem)
+img_0002,instance_merge,rejected,Không có vật nào bị phủ nên trùng với nhau (NguyenVietAnh xem)
+img_0013,category_swap,confirmed,quả cam và quả táo ở bên dưới vật nó đang bị đổi lớp cho nhau (NguyenVietAnh xem)
+img_0013,instance_merge,rejected,không bị phủ lên chồng lớp lên nhau (NguyenVietAnh xem)
+img_0017,category_swap,confirmed,bị sai nhãn backpack phải là handbag (NguyenVietAnh xem)
+img_0017,category_swap,confirmed,Nhầm nhãn truck phải là nhãn bus (NguyenVietAnh xem)
+img_0027,class_swap,confirmed,nhận nhầm nhãn car thành trunk (NguyenVietAnh xem)
+img_0037,class_swap,confirmed,Nhầm nhãn car thành trunk (NguyenVietAnh xem)
+img_0041,category_swap,confirmed,Vật giữa đĩa là bánh mì khoét ruột đựng thức ăn; panoptic gán cake không phù hợp (NguyenVietAnh xem)
+img_0041,class_swap,confirmed,"Vật giữa ảnh là cốc nhựa đựng hạt; detection gán bowl, trong khi panoptic gán cup phù hợp hơn. (NguyenVietAnh xem)"
+img_0055,class_swap,confirmed,"Detection ghi dog, panoptic ghi sink cho vùng được ghép. Vật thực tế là sink (NguyenVietAnh xem)"
+img_0070,missing_box,confirmed,skateboard ở dưới chân chưa có box detection tương ứng. (NguyenVietAnh xem)
+img_0073,category_swap,confirmed,Vật thực tế là bánh mì nhưng panoptic lại ghi là hotdog (NguyenVietAnh xem)
+img_0080,class_swap,confirmed,detection ghi cake nhưng vật thực tế lại là ô tô đồ chơi (NguyenVietAnh xem)
+img_0107,class_swap,rejected,Box chair bao ghế phía sau hai bé; validator ghép nhầm với segment person. (NguyenVietAnh xem)
+img_0107,missing_box,rejected,chair ở vị trí sau 2 bé gái đã có box detection tương ứng (NguyenVietAnh xem)
+img_0108,class_swap,confirmed,Detection ghi dog nhưng vật thực tế là sheep. (NguyenVietAnh xem)
+img_0112,class_swap,rejected,"Box chair bao chiếc ghế sau người phụ nữ, máy ghép nhầm sang segment person. (NguyenVietAnh xem)"
+img_0113,bbox_drift,rejected,Box boat đang bao thuyền phía sau (NguyenVietAnh xem)
+img_0113,instance_merge,rejected,"Hai chiếc thuyền nằm chồng nhau nhưng có đường viền segment riêng, không thấy gộp thành một thuyền. (NguyenVietAnh xem)"
+img_0113,missing_box,rejected,"Thuyền nhỏ phía sau bên phải đã có box boat, không thiếu box tương ứng. (NguyenVietAnh xem)"
+img_0125,instance_merge,rejected,"Các cuốn sách có segment riêng, box chồng nhau nên máy ghép nhầm. (NguyenVietAnh xem)"
+img_0126,instance_merge,rejected,"Ghế bị người che và các box chồng nhau, chưa thấy 2 ghế bị gộp chung. (NguyenVietAnh xem)"
+img_0158,bbox_drift,confirmed,"Box bear lệch sang phải và xuống dưới, bỏ mất phần bên trái của con gấu lớn. (NguyenVietAnh xem)"
+img_0159,class_swap,rejected,Box chair bao ghế người đàn ông đang ngồi (NguyenVietAnh xem)
+img_0162,missing_box,rejected,Các quả chuối đã có box banana tương ứng (NguyenVietAnh xem)
+img_0162,instance_merge,rejected,"Các quả chuối có vùng segment riêng, hai box chồng nhau không có nghĩa là bị gộp. (NguyenVietAnh xem)"
+img_0170,category_swap,confirmed,"Vật thực tế là ngựa vằn nhưng panoptic lại ghi tennis racket, detection ghi zebra đúng. (NguyenVietAnh xem)"
+img_0174,class_swap,rejected,"Vật là ly uống nước, có cả box cup và wine glass cùng bao ly này. (NguyenVietAnh xem)"
+img_0175,class_swap,confirmed,"Xe phía sau là xe buýt nhưng detection ghi car, panoptic ghi bus đúng. (NguyenVietAnh xem)"
+img_0175,instance_merge,rejected,"Xe buýt và ô tô trắng có segment riêng, không bị gộp thành một xe. (NguyenVietAnh xem)"
+img_0193,category_swap,rejected,"Ghế bọc nệm bên phải có tay vịn, chair và couch đang chỉ cùng chiếc ghế. (NguyenVietAnh xem)"
+img_0193,class_swap,rejected,"Vật đỏ trên bàn có cả box bowl và cup, chưa thấy lỗi đổi lớp rõ ràng. (NguyenVietAnh xem)"
+img_0202,bbox_drift,confirmed,"Box knife lệch xuống dưới và sang phải, không bao đúng cán dao đang được ghép. (NguyenVietAnh xem)"
+img_0202,instance_merge,rejected,"Các cán dao có segment riêng, box bị lệch làm máy nghi một segment phủ hai dao. (NguyenVietAnh xem)"
+img_0204,class_swap,rejected,"Vật trắng có nắp đen được gán cả bottle và cup, chưa thấy đổi lớp rõ ràng. (NguyenVietAnh xem)"
+img_0204,class_swap,rejected,"Vật xanh có cả box bottle và cup, 2 box chồng nhau nên máy ghép khác nhãn. (NguyenVietAnh xem)"
+img_0214,category_swap,confirmed,"Vật thực tế là con mèo nhưng panoptic ghi dog, detection ghi cat đúng. (NguyenVietAnh xem)"
+img_0223,class_swap,rejected,"Có cả box chair và couch quanh ghế bọc nệm, chưa thấy bằng chứng box couch là lỗi đổi lớp. (NguyenVietAnh xem)"
+img_0226,class_swap,rejected,"Box couch bao ghế có con chó nằm lên trên, máy ghép nhầm sang segment dog. (NguyenVietAnh xem)"
+img_0227,class_swap,rejected,"Box dining table bao vùng bàn phía dưới đĩa pizza, máy ghép nhầm sang segment pizza. (NguyenVietAnh xem)"
+img_0227,missing_box,rejected,"Bàn ăn đã có box dining table bao vùng ảnh, không thiếu box của bàn. (NguyenVietAnh xem)"
+img_0237,bbox_drift,confirmed,"Box orange lệch sang phải và xuống dưới, bỏ phần mép trên bên trái của miếng cam. (NguyenVietAnh xem)"
+img_0242,bbox_drift,rejected,Box dài bao người ở giữa người áo đen và áo hồng (NguyenVietAnh xem)
+img_0242,instance_merge,rejected,"Người áo hồng và người áo đen có segment riêng, máy ghép nhầm 2 box. (NguyenVietAnh xem)"
+img_0242,missing_box,rejected,"Những người phía trước đã có box person, phần bị che làm máy không ghép được segment. (NguyenVietAnh xem)"
+img_0247,bbox_drift,rejected,Box tv bao màn hình bên trái (NguyenVietAnh xem)
+img_0247,bbox_drift,rejected,"Box tv bao màn hình bên phải, không phải box lệch; segment đang gồm vùng hai màn hình. (NguyenVietAnh xem)"
+img_0247,instance_merge,confirmed,Hai màn hình nằm hai bên đầu gấu nhưng panoptic gộp chung một segment tv. (NguyenVietAnh xem)
+img_0249,class_swap,confirmed,"Vật bên trái là ghế đơn nhưng detection ghi bench, panoptic ghi chair đúng. (NguyenVietAnh xem)"
