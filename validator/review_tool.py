@@ -97,7 +97,10 @@ def render(d: Path, c: dict, classes: dict, cats: dict, ann: dict) -> Image.Imag
         arr[m] = (arr[m] * 0.75 + np.array(color) * 0.25).astype(np.uint8)
         ys, xs = np.nonzero(m)
         label = cats[s["category_id"]]["name"] + (" (crowd)" if s.get("iscrowd") else "")
-        pd.append((int(xs.mean()), int(ys.mean()), label, color))
+        # đặt chữ trên pixel của chính segment gần tâm nhất: segment hình vành (vd giường bao quanh)
+        # có tâm rơi vào vật khác, đặt ở tâm sẽ gán nhầm tên cho vật đó
+        k = int(np.argmin((xs - xs.mean()) ** 2 + (ys - ys.mean()) ** 2))
+        pd.append((int(xs[k]), int(ys[k]), label, color))
     pan = Image.fromarray(arr)
     dp = ImageDraw.Draw(pan)
     for x, y, label, color in pd:
