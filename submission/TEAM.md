@@ -15,10 +15,10 @@ python scripts/inject_release.py --seed 36011 --out runs/r36011            # see
 Cùng seed thì ra cùng lô, nên `release_id` phải là `lab250_20c49a5c6d97`. Không chạy lại `run_lab.py`, không mở `runs/*/_private/`.
 
 | Họ và tên | MSHV | Tài khoản GitHub | Phần chính |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Chu Thiên Phú | 2A202603114 | chuphu2004 | <<>> |
 | Lưu Nhật Nam | 2A202603243 | <<>> | <<>> |
 | Hoàng Thu Hương | 2A202603143 | borisbrjch | P3, P4 |
-| Nguyễn Việt Anh | 2A202603095 | <<>> | <<>> |
+| Nguyễn Việt Anh | 2A202603095 | vietanhngx | P6 |
 
 Phần chính: validator luật / đối chiếu / review / bàn giao / truy vết / bảo mật. Ai cũng phải xem ảnh ở Pha 2.
