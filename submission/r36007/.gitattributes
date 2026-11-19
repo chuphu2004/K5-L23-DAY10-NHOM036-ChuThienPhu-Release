@@ -1,0 +1,2 @@
+# Keep the reviewed release byte-for-byte identical across Git checkouts.
+handover/** -text

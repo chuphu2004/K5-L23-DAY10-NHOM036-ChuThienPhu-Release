@@ -1,0 +1,23 @@
+image,type,annotator,reviewer,action
+000000000872,missing_box,A03,Q03,Bổ sung box và lớp cho vật bị bỏ sót.
+000000001818,missing_box,A03,Q03,Bổ sung box và lớp cho vật bị bỏ sót.
+000000002157,bbox_drift,A02,Q02,Đặt lại box theo vị trí và phạm vi của vật.
+000000002473,duplicate_box,A02,Q02,"Kiểm tra hai box trùng, giữ box đúng cho mỗi vật."
+000000002685,bbox_drift,A02,Q02,Đặt lại box theo vị trí và phạm vi của vật.
+000000006723,class_swap,A04,Q02,Xem vật trong box và sửa lớp detection.
+000000006763,bbox_out_of_bounds,A04,Q02,Chỉnh box theo vật để các cạnh nằm trong ảnh.
+000000007574,missing_box,A04,Q01,Bổ sung box và lớp cho vật bị bỏ sót.
+000000008690,bbox_drift,A04,Q01,Đặt lại box theo vị trí và phạm vi của vật.
+000000009400,missing_image,A04,Q01,Khôi phục đúng ảnh nguồn và kiểm lại nhãn YOLO.
+000000009590,class_swap,A04,Q01,Xem vật trong box và sửa lớp detection.
+000000009914,class_swap,A04,Q02,Xem vật trong box và sửa lớp detection.
+000000010092,class_swap,A04,Q02,Xem vật trong box và sửa lớp detection.
+000000012639,bbox_drift,A04,Q02,Đặt lại box theo vị trí và phạm vi của vật.
+000000012748,missing_box,A04,Q02,Bổ sung box và lớp cho vật bị bỏ sót.
+000000014473,missing_box,A01,Q01,Bổ sung box và lớp cho vật bị bỏ sót.
+000000017959,bbox_drift,A05,Q01,Đặt lại box theo vị trí và phạm vi của vật.
+000000018491,class_swap,A05,Q01,Xem vật trong box và sửa lớp detection.
+000000018575,invalid_class,A05,Q01,Đối chiếu vật trong ảnh và sửa ID lớp theo classes.txt.
+000000018770,bbox_drift,A05,Q01,Đặt lại box theo vị trí và phạm vi của vật.
+000000018833,duplicate_box,A05,Q01,"Kiểm tra hai box trùng, giữ box đúng cho mỗi vật."
+000000020247,invalid_class,A05,Q01,Đối chiếu vật trong ảnh và sửa ID lớp theo classes.txt.
