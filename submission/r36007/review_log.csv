@@ -1,0 +1,33 @@
+image,type,verdict,note
+000000000139,category_swap,confirmed,"Chair ở giữa là chair thật, nhưng segment nhầm thành bench (Phú xem)"
+000000000776,missing_box,rejected,"3 gấu bông nằm trên giường, box bed phủ cả ảnh hợp lý; giường chỉ lộ viền quanh mép nên máy ghép lệch, không phải đổi lớp hay thiếu box (Phú xem)"
+000000000872,missing_box,confirmed,"2 người xếp thẳng hàng bị đánh nhầm thành 1 box to, ở phần segment vẫn phân biệt 2 thực thể 'person' (Phú xem)"
+000000001000,bbox_drift,rejected,"2 người đứng sát, mỗi box khớp người của nó, máy ghép chéo; box backpack đúng là ba lô ở bên trái (Phú xem)"
+000000001818,missing_box,confirmed,thiếu box ngựa vằn ở góc bên trái của ảnh (Phú xem)
+000000002157,bbox_drift,confirmed,bbox bị lệch ra khỏi chiếc ly (Phú xem)
+000000002685,bbox_drift,confirmed,bbox không trùm hết toàn bộ object được label (Phú xem)
+000000005001,missing_box,rejected,Không có lỗi gì được tìm thấy trong 3 lỗi đuọc suggest bởi máy (Phú xem)
+000000006723,class_swap,confirmed,Thừa Bbox truck (Lưu Nhật Nam xem)
+000000006771,bbox_drift,rejected,"segment đánh đúng, bbox ổn (Lưu Nhật Nam xem)"
+000000007574,missing_box,confirmed,thiếu bbox refrigerator (Lưu Nhật Nam xem)
+000000008211,bbox_drift,rejected,vùng ghế đúng nhưng do ghế mảnh (Lưu Nhật Nam xem)
+000000008690,bbox_drift,confirmed,đánh Bbox dê thiếu (Lưu Nhật Nam xem)
+000000009590,class_swap,confirmed,Thừa Bbox cup phần detection (Lưu Nhật Nam xem)
+000000009914,class_swap,confirmed,thừa và đánh sai Bbox hotdog phần detection (Lưu Nhật Nam xem)
+000000010092,class_swap,confirmed,"panoptic sai class mouse, phải là bed (Lưu Nhật Nam xem)"
+000000012639,bbox_drift,confirmed,sai kích thước box (box trượt khoảng 1/3 khỏi vật thể) (Hoàng Thu Hương xem)
+000000012748,missing_box,confirmed,"thiếu box `person`, gần như trùng với box `person` có sẵn (Hoàng Thu Hương xem)"
+000000013597,class_swap,rejected,object `cake` nằm trên `table` (Hoàng Thu Hương xem)
+000000013729,instance_merge,confirmed,instance_merge: 2 remotes gộp chung 1 box | bbox_drift: sai kích thước box `counch` (Hoàng Thu Hương xem)
+000000014473,missing_box,confirmed,không có box train nào (Hoàng Thu Hương xem)
+000000016010,bbox_drift,rejected,"lệch tự nhiên, không phải lỗi (Hoàng Thu Hương xem)"
+000000017182,bbox_drift,rejected,không có instance ID nên khó review lỗi của từng vật thể. Tuy nhiên mask từng object đã đúng. (Hoàng Thu Hương xem)
+000000017959,bbox_drift,confirmed,"bbox_drift, missing_box, instance_merge: còn nhầm, thiếu, và merge box (Hoàng Thu Hương xem)"
+000000018193,category_swap,rejected,Cái ghế đằng sau người (Nguyễn Việt Anh xem)
+000000018380,category_swap,confirmed,cái cốc bị nhầm với cái bàn (Nguyễn Việt Anh xem)
+000000018491,class_swap,confirmed,bench bị nhầm thành chair (Nguyễn Việt Anh xem)
+000000018770,bbox_drift,confirmed,box bị lệch vị trí của tie (Nguyễn Việt Anh xem)
+000000020553,category_swap,confirmed,vase bị nhầm với bottle (Nguyễn Việt Anh xem)
+000000022892,class_swap,rejected,đánh nhãn đúng (Nguyễn Việt Anh xem)
+000000024243,bbox_drift,rejected,box đã khít với vật thể (Nguyễn Việt Anh xem)
+000000024610,bbox_drift,rejected,box đã khít với vật thể (Nguyễn Việt Anh xem)

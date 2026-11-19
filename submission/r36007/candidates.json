@@ -1,0 +1,948 @@
+{
+ "candidates": [
+  {
+   "image": "000000000139",
+   "type": "class_swap|category_swap",
+   "box": [
+    359,
+    218,
+    415,
+    321
+   ],
+   "detection": "chair",
+   "panoptic": "bench",
+   "score": 0.39,
+   "hint": "box chair trùng segment bench: mở ảnh xem vật là gì"
+  },
+  {
+   "image": "000000000776",
+   "type": "class_swap|category_swap",
+   "box": [
+    1,
+    0,
+    428,
+    640
+   ],
+   "detection": "bed",
+   "panoptic": "teddy bear",
+   "score": 0.31,
+   "hint": "box bed trùng segment teddy bear: mở ảnh xem vật là gì"
+  },
+  {
+   "image": "000000000776",
+   "type": "missing_box",
+   "panoptic": "bed",
+   "segment_bbox": [
+    2,
+    0,
+    428,
+    640
+   ],
+   "hint": "segment bed 27135 px không có box bed nào"
+  },
+  {
+   "image": "000000000872",
+   "type": "missing_box",
+   "panoptic": "person",
+   "segment_bbox": [
+    146,
+    102,
+    438,
+    558
+   ],
+   "hint": "segment person 25073 px không có box person nào"
+  },
+  {
+   "image": "000000001000",
+   "type": "bbox_drift",
+   "box": [
+    183,
+    121,
+    279,
+    394
+   ],
+   "detection": "person",
+   "segment_bbox": [
+    210,
+    176,
+    310,
+    424
+   ],
+   "overhang": 0.32,
+   "frac_in": 0.86,
+   "hint": "segment person thò ra ngoài box 32% cạnh box, 86% pixel nằm trong"
+  },
+  {
+   "image": "000000001000",
+   "type": "class_swap|category_swap",
+   "box": [
+    43,
+    224,
+    98,
+    275
+   ],
+   "detection": "backpack",
+   "panoptic": "person",
+   "score": 0.29,
+   "hint": "box backpack trùng segment person: mở ảnh xem vật là gì"
+  },
+  {
+   "image": "000000001000",
+   "type": "instance_merge",
+   "panoptic": "person",
+   "segment_bbox": [
+    210,
+    176,
+    310,
+    424
+   ],
+   "boxes": [
+    [
+     209,
+     175,
+     309,
+     424
+    ],
+    [
+     183,
+     121,
+     279,
+     394
+    ]
+   ],
+   "hint": "một segment person phủ hai box person tách nhau"
+  },
+  {
+   "image": "000000001000",
+   "type": "missing_box",
+   "panoptic": "person",
+   "segment_bbox": [
+    184,
+    122,
+    280,
+    394
+   ],
+   "hint": "segment person 6140 px không có box person nào"
+  },
+  {
+   "image": "000000001818",
+   "type": "missing_box",
+   "panoptic": "zebra",
+   "segment_bbox": [
+    0,
+    2,
+    638,
+    426
+   ],
+   "hint": "segment zebra 120106 px không có box zebra nào"
+  },
+  {
+   "image": "000000002157",
+   "type": "bbox_drift",
+   "box": [
+    51,
+    61,
+    111,
+    155
+   ],
+   "detection": "wine glass",
+   "segment_bbox": [
+    48,
+    18,
+    114,
+    162
+   ],
+   "overhang": 0.45,
+   "frac_in": 0.48,
+   "hint": "segment wine glass thò ra ngoài box 45% cạnh box, 48% pixel nằm trong"
+  },
+  {
+   "image": "000000002157",
+   "type": "bbox_drift",
+   "box": [
+    237,
+    48,
+    300,
+    179
+   ],
+   "detection": "wine glass",
+   "segment_bbox": [
+    232,
+    54,
+    292,
+    202
+   ],
+   "overhang": 0.18,
+   "frac_in": 0.77,
+   "hint": "segment wine glass thò ra ngoài box 18% cạnh box, 77% pixel nằm trong"
+  },
+  {
+   "image": "000000002685",
+   "type": "bbox_drift",
+   "box": [
+    141,
+    256,
+    178,
+    291
+   ],
+   "detection": "bottle",
+   "segment_bbox": [
+    138,
+    264,
+    176,
+    312
+   ],
+   "overhang": 0.62,
+   "frac_in": 0.58,
+   "hint": "segment bottle thò ra ngoài box 62% cạnh box, 58% pixel nằm trong"
+  },
+  {
+   "image": "000000002685",
+   "type": "instance_merge",
+   "panoptic": "bottle",
+   "segment_bbox": [
+    138,
+    264,
+    176,
+    312
+   ],
+   "boxes": [
+    [
+     138,
+     263,
+     176,
+     312
+    ],
+    [
+     141,
+     256,
+     178,
+     291
+    ]
+   ],
+   "hint": "một segment bottle phủ hai box bottle tách nhau"
+  },
+  {
+   "image": "000000005001",
+   "type": "bbox_drift",
+   "box": [
+    208,
+    61,
+    298,
+    210
+   ],
+   "detection": "person",
+   "segment_bbox": [
+    216,
+    88,
+    336,
+    280
+   ],
+   "overhang": 0.47,
+   "frac_in": 0.51,
+   "hint": "segment person thò ra ngoài box 47% cạnh box, 51% pixel nằm trong"
+  },
+  {
+   "image": "000000005001",
+   "type": "missing_box",
+   "panoptic": "person",
+   "segment_bbox": [
+    210,
+    62,
+    296,
+    210
+   ],
+   "hint": "segment person 3431 px không có box person nào"
+  },
+  {
+   "image": "000000005001",
+   "type": "instance_merge",
+   "panoptic": "person",
+   "segment_bbox": [
+    216,
+    88,
+    336,
+    280
+   ],
+   "boxes": [
+    [
+     211,
+     88,
+     335,
+     281
+    ],
+    [
+     208,
+     61,
+     298,
+     210
+    ]
+   ],
+   "hint": "một segment person phủ hai box person tách nhau"
+  },
+  {
+   "image": "000000006723",
+   "type": "class_swap|category_swap",
+   "box": [
+    362,
+    193,
+    390,
+    223
+   ],
+   "detection": "truck",
+   "panoptic": "bus",
+   "score": 0.83,
+   "hint": "box truck trùng segment bus: mở ảnh xem vật là gì"
+  },
+  {
+   "image": "000000006771",
+   "type": "bbox_drift",
+   "box": [
+    533,
+    128,
+    640,
+    328
+   ],
+   "detection": "person",
+   "segment_bbox": [
+    534,
+    174,
+    640,
+    418
+   ],
+   "overhang": 0.45,
+   "frac_in": 0.51,
+   "hint": "segment person thò ra ngoài box 45% cạnh box, 51% pixel nằm trong"
+  },
+  {
+   "image": "000000006771",
+   "type": "missing_box",
+   "panoptic": "person",
+   "segment_bbox": [
+    534,
+    128,
+    640,
+    328
+   ],
+   "hint": "segment person 5877 px không có box person nào"
+  },
+  {
+   "image": "000000007574",
+   "type": "missing_box",
+   "panoptic": "refrigerator",
+   "segment_bbox": [
+    2,
+    170,
+    104,
+    446
+   ],
+   "hint": "segment refrigerator 22219 px không có box refrigerator nào"
+  },
+  {
+   "image": "000000008211",
+   "type": "class_swap|category_swap",
+   "box": [
+    322,
+    251,
+    378,
+    345
+   ],
+   "detection": "chair",
+   "panoptic": "person",
+   "score": 0.32,
+   "hint": "box chair trùng segment person: mở ảnh xem vật là gì"
+  },
+  {
+   "image": "000000008690",
+   "type": "bbox_drift",
+   "box": [
+    137,
+    19,
+    352,
+    397
+   ],
+   "detection": "person",
+   "segment_bbox": [
+    138,
+    20,
+    638,
+    474
+   ],
+   "overhang": 1.33,
+   "frac_in": 0.9,
+   "hint": "segment person thò ra ngoài box 133% cạnh box, 90% pixel nằm trong"
+  },
+  {
+   "image": "000000008690",
+   "type": "class_swap|category_swap",
+   "box": [
+    380,
+    390,
+    637,
+    474
+   ],
+   "detection": "person",
+   "panoptic": "sheep",
+   "score": 0.35,
+   "hint": "box person trùng segment sheep: mở ảnh xem vật là gì"
+  },
+  {
+   "image": "000000009590",
+   "type": "class_swap|category_swap",
+   "box": [
+    423,
+    275,
+    472,
+    306
+   ],
+   "detection": "cup",
+   "panoptic": "bowl",
+   "score": 0.72,
+   "hint": "box cup trùng segment bowl: mở ảnh xem vật là gì"
+  },
+  {
+   "image": "000000009914",
+   "type": "class_swap|category_swap",
+   "box": [
+    519,
+    186,
+    640,
+    464
+   ],
+   "detection": "hot dog",
+   "panoptic": "sandwich",
+   "score": 0.69,
+   "hint": "box hot dog trùng segment sandwich: mở ảnh xem vật là gì"
+  },
+  {
+   "image": "000000010092",
+   "type": "class_swap|category_swap",
+   "box": [
+    94,
+    187,
+    439,
+    376
+   ],
+   "detection": "bed",
+   "panoptic": "mouse",
+   "score": 0.85,
+   "hint": "box bed trùng segment mouse: mở ảnh xem vật là gì"
+  },
+  {
+   "image": "000000010092",
+   "type": "class_swap|category_swap",
+   "box": [
+    538,
+    205,
+    640,
+    407
+   ],
+   "detection": "chair",
+   "panoptic": "dining table",
+   "score": 0.38,
+   "hint": "box chair trùng segment dining table: mở ảnh xem vật là gì"
+  },
+  {
+   "image": "000000012639",
+   "type": "bbox_drift",
+   "box": [
+    407,
+    167,
+    471,
+    355
+   ],
+   "detection": "person",
+   "segment_bbox": [
+    412,
+    126,
+    468,
+    294
+   ],
+   "overhang": 0.22,
+   "frac_in": 0.83,
+   "hint": "segment person thò ra ngoài box 22% cạnh box, 83% pixel nằm trong"
+  },
+  {
+   "image": "000000012748",
+   "type": "bbox_drift",
+   "box": [
+    217,
+    188,
+    480,
+    633
+   ],
+   "detection": "person",
+   "segment_bbox": [
+    222,
+    140,
+    480,
+    632
+   ],
+   "overhang": 0.11,
+   "frac_in": 0.94,
+   "hint": "segment person thò ra ngoài box 11% cạnh box, 94% pixel nằm trong"
+  },
+  {
+   "image": "000000012748",
+   "type": "missing_box",
+   "panoptic": "person",
+   "segment_bbox": [
+    218,
+    188,
+    480,
+    634
+   ],
+   "hint": "segment person 43320 px không có box person nào"
+  },
+  {
+   "image": "000000013597",
+   "type": "class_swap|category_swap",
+   "box": [
+    0,
+    0,
+    640,
+    420
+   ],
+   "detection": "dining table",
+   "panoptic": "cake",
+   "score": 0.31,
+   "hint": "box dining table trùng segment cake: mở ảnh xem vật là gì"
+  },
+  {
+   "image": "000000013729",
+   "type": "class_swap|category_swap",
+   "box": [
+    232,
+    142,
+    397,
+    280
+   ],
+   "detection": "remote",
+   "panoptic": "person",
+   "score": 0.27,
+   "hint": "box remote trùng segment person: mở ảnh xem vật là gì"
+  },
+  {
+   "image": "000000014473",
+   "type": "missing_box",
+   "panoptic": "train",
+   "segment_bbox": [
+    0,
+    156,
+    594,
+    308
+   ],
+   "hint": "segment train 43223 px không có box train nào"
+  },
+  {
+   "image": "000000016010",
+   "type": "bbox_drift",
+   "box": [
+    421,
+    265,
+    447,
+    305
+   ],
+   "detection": "zebra",
+   "segment_bbox": [
+    360,
+    268,
+    448,
+    326
+   ],
+   "overhang": 2.4,
+   "frac_in": 0.21,
+   "hint": "segment zebra thò ra ngoài box 240% cạnh box, 21% pixel nằm trong"
+  },
+  {
+   "image": "000000016010",
+   "type": "instance_merge",
+   "panoptic": "zebra",
+   "segment_bbox": [
+    360,
+    268,
+    448,
+    326
+   ],
+   "boxes": [
+    [
+     359,
+     267,
+     447,
+     325
+    ],
+    [
+     421,
+     265,
+     447,
+     305
+    ]
+   ],
+   "hint": "một segment zebra phủ hai box zebra tách nhau"
+  },
+  {
+   "image": "000000017182",
+   "type": "bbox_drift",
+   "box": [
+    276,
+    229,
+    311,
+    302
+   ],
+   "detection": "book",
+   "segment_bbox": [
+    242,
+    232,
+    300,
+    306
+   ],
+   "overhang": 0.97,
+   "frac_in": 0.4,
+   "hint": "segment book thò ra ngoài box 97% cạnh box, 40% pixel nằm trong"
+  },
+  {
+   "image": "000000017182",
+   "type": "bbox_drift",
+   "box": [
+    315,
+    229,
+    346,
+    295
+   ],
+   "detection": "book",
+   "segment_bbox": [
+    306,
+    228,
+    334,
+    298
+   ],
+   "overhang": 0.28,
+   "frac_in": 0.95,
+   "hint": "segment book thò ra ngoài box 28% cạnh box, 95% pixel nằm trong"
+  },
+  {
+   "image": "000000017182",
+   "type": "bbox_drift",
+   "box": [
+    318,
+    228,
+    356,
+    293
+   ],
+   "detection": "book",
+   "segment_bbox": [
+    306,
+    228,
+    334,
+    298
+   ],
+   "overhang": 0.33,
+   "frac_in": 0.9,
+   "hint": "segment book thò ra ngoài box 33% cạnh box, 90% pixel nằm trong"
+  },
+  {
+   "image": "000000017182",
+   "type": "instance_merge",
+   "panoptic": "book",
+   "segment_bbox": [
+    242,
+    232,
+    300,
+    306
+   ],
+   "boxes": [
+    [
+     241,
+     231,
+     299,
+     306
+    ],
+    [
+     276,
+     229,
+     311,
+     302
+    ]
+   ],
+   "hint": "một segment book phủ hai box book tách nhau"
+  },
+  {
+   "image": "000000017182",
+   "type": "instance_merge",
+   "panoptic": "book",
+   "segment_bbox": [
+    306,
+    228,
+    334,
+    298
+   ],
+   "boxes": [
+    [
+     305,
+     227,
+     334,
+     297
+    ],
+    [
+     315,
+     229,
+     346,
+     295
+    ]
+   ],
+   "hint": "một segment book phủ hai box book tách nhau"
+  },
+  {
+   "image": "000000017959",
+   "type": "bbox_drift",
+   "box": [
+    243,
+    122,
+    459,
+    229
+   ],
+   "detection": "kite",
+   "segment_bbox": [
+    272,
+    178,
+    420,
+    268
+   ],
+   "overhang": 0.36,
+   "frac_in": 0.73,
+   "hint": "segment kite thò ra ngoài box 36% cạnh box, 73% pixel nằm trong"
+  },
+  {
+   "image": "000000017959",
+   "type": "bbox_drift",
+   "box": [
+    164,
+    141,
+    331,
+    345
+   ],
+   "detection": "kite",
+   "segment_bbox": [
+    192,
+    272,
+    324,
+    398
+   ],
+   "overhang": 0.26,
+   "frac_in": 0.59,
+   "hint": "segment kite thò ra ngoài box 26% cạnh box, 59% pixel nằm trong"
+  },
+  {
+   "image": "000000017959",
+   "type": "bbox_drift",
+   "box": [
+    350,
+    95,
+    640,
+    277
+   ],
+   "detection": "kite",
+   "segment_bbox": [
+    446,
+    204,
+    600,
+    310
+   ],
+   "overhang": 0.18,
+   "frac_in": 0.82,
+   "hint": "segment kite thò ra ngoài box 18% cạnh box, 82% pixel nằm trong"
+  },
+  {
+   "image": "000000017959",
+   "type": "missing_box",
+   "panoptic": "kite",
+   "segment_bbox": [
+    244,
+    122,
+    458,
+    230
+   ],
+   "hint": "segment kite 2459 px không có box kite nào"
+  },
+  {
+   "image": "000000017959",
+   "type": "missing_box",
+   "panoptic": "kite",
+   "segment_bbox": [
+    350,
+    96,
+    634,
+    278
+   ],
+   "hint": "segment kite 2798 px không có box kite nào"
+  },
+  {
+   "image": "000000017959",
+   "type": "instance_merge",
+   "panoptic": "kite",
+   "segment_bbox": [
+    272,
+    178,
+    420,
+    268
+   ],
+   "boxes": [
+    [
+     243,
+     122,
+     459,
+     229
+    ],
+    [
+     271,
+     177,
+     420,
+     267
+    ]
+   ],
+   "hint": "một segment kite phủ hai box kite tách nhau"
+  },
+  {
+   "image": "000000017959",
+   "type": "missing_box",
+   "panoptic": "kite",
+   "segment_bbox": [
+    166,
+    142,
+    332,
+    346
+   ],
+   "hint": "segment kite 2681 px không có box kite nào"
+  },
+  {
+   "image": "000000018193",
+   "type": "class_swap|category_swap",
+   "box": [
+    28,
+    123,
+    397,
+    470
+   ],
+   "detection": "chair",
+   "panoptic": "person",
+   "score": 0.5,
+   "hint": "box chair trùng segment person: mở ảnh xem vật là gì"
+  },
+  {
+   "image": "000000018380",
+   "type": "class_swap|category_swap",
+   "box": [
+    292,
+    184,
+    309,
+    207
+   ],
+   "detection": "cup",
+   "panoptic": "wine glass",
+   "score": 0.65,
+   "hint": "box cup trùng segment wine glass: mở ảnh xem vật là gì"
+  },
+  {
+   "image": "000000018491",
+   "type": "class_swap|category_swap",
+   "box": [
+    0,
+    141,
+    224,
+    153
+   ],
+   "detection": "chair",
+   "panoptic": "bench",
+   "score": 0.31,
+   "hint": "box chair trùng segment bench: mở ảnh xem vật là gì"
+  },
+  {
+   "image": "000000018770",
+   "type": "bbox_drift",
+   "box": [
+    254,
+    218,
+    346,
+    420
+   ],
+   "detection": "tie",
+   "segment_bbox": [
+    270,
+    176,
+    362,
+    378
+   ],
+   "overhang": 0.21,
+   "frac_in": 0.76,
+   "hint": "segment tie thò ra ngoài box 21% cạnh box, 76% pixel nằm trong"
+  },
+  {
+   "image": "000000020553",
+   "type": "class_swap|category_swap",
+   "box": [
+    407,
+    132,
+    418,
+    186
+   ],
+   "detection": "bottle",
+   "panoptic": "vase",
+   "score": 0.64,
+   "hint": "box bottle trùng segment vase: mở ảnh xem vật là gì"
+  },
+  {
+   "image": "000000022892",
+   "type": "class_swap|category_swap",
+   "box": [
+    314,
+    0,
+    500,
+    260
+   ],
+   "detection": "chair",
+   "panoptic": "cat",
+   "score": 0.56,
+   "hint": "box chair trùng segment cat: mở ảnh xem vật là gì"
+  },
+  {
+   "image": "000000024243",
+   "type": "bbox_drift",
+   "box": [
+    0,
+    308,
+    29,
+    347
+   ],
+   "detection": "cup",
+   "segment_bbox": [
+    0,
+    318,
+    24,
+    360
+   ],
+   "overhang": 0.32,
+   "frac_in": 0.69,
+   "hint": "segment cup thò ra ngoài box 32% cạnh box, 69% pixel nằm trong"
+  },
+  {
+   "image": "000000024610",
+   "type": "bbox_drift",
+   "box": [
+    378,
+    381,
+    389,
+    425
+   ],
+   "detection": "book",
+   "segment_bbox": [
+    378,
+    382,
+    390,
+    426
+   ],
+   "overhang": 0.09,
+   "frac_in": 0.91,
+   "hint": "segment book thò ra ngoài box 9% cạnh box, 91% pixel nằm trong"
+  }
+ ]
+}
